@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
 /**
  * @Route("/bar")
  */
@@ -87,7 +88,7 @@ class BarController extends AbstractController
      */
     public function delete(Request $request, Bar $bar, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$bar->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $bar->getId(), $request->request->get('_token'))) {
             $entityManager->remove($bar);
             $entityManager->flush();
         }

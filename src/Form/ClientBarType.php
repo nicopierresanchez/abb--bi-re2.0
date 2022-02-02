@@ -17,8 +17,7 @@ class ClientBarType extends AbstractType
             ->add('type')
             ->add('address')
             ->add('phone')
-            ->add('image')
-        ;
+            ->add('image');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

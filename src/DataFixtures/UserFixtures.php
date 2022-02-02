@@ -85,7 +85,7 @@ class UserFixtures extends Fixture
             $user->setName($data[2]);
             $user->setRoles($data[3]);
             $this->addReference('user_' . $key, $user);
-            $user->setPassword($this->passwordHasher->hashPassword($user,$data[4]));
+            $user->setPassword($this->passwordHasher->hashPassword($user, $data[4]));
 
             $manager->persist($user);
         }
