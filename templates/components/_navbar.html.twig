@@ -1,0 +1,37 @@
+{% block navbar %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<div class="topnav">
+
+		<a class="logoDesktop" href="/" title="Home">
+			<img src="{{ asset('build/images/logo.png') }}" alt="Logo"/></a>
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="/">Accueil</a>
+			<a href="/bar">Trouver un bar</a>
+			<a href="/game">Jeux</a>
+			<a href="/contact">Nous contacter</a>
+			{% if  app.user %}
+				<a href="{{ path('user_show', {'id': app.user.id}) }}">Mon profil</a>
+				<a href="/logout">Se déconnecter</a>
+			{% else %}
+				<a href="/login">Connexion</a>
+			{% endif %}
+
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<script>
+		function myFunction() {
+let x = document.getElementById("myLinks");
+if (x.style.display === "block") {
+x.style.display = "none";
+} else {
+x.style.display = "block";
+}
+}
+	</script>
+
+{% endblock %}

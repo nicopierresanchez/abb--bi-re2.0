@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('bar_show') }}
+
+{% endblock %}
+
+{% block title %}
+	{{ bar.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="button_back">
+		<a href="{{ path('bar_index') }}"> ⬅ back to list</a>
+	</div>
+	<div class="title">
+		<h1>{{ bar.name }}</h1>
+	</div>
+	<div class="card_bar">
+
+		<div class="description_bar">
+			<div class="bar_type">{{ bar.type }}</div>
+			<div class="bar_adress">{{ bar.address }}</div>
+
+			{% if bar.phone is null %}
+				<div class="bar_no_phone">téléphone non renseigné</div>
+			{% else %}
+				<div class="bar_phone">0{{ bar.phone }}</div>
+			{% endif %}
+			{% if is_granted('ROLE_ADMIN') %}
+
+				<a href="{{ path('bar_edit', {'id': bar.id}) }}">edit</a>
+			{% endif %}
+		</div>
+		<div class="image_bar">
+			<img src="{{ bar.image }}" alt="image">
+		</div>
+		<a href="{{ path('bar_product_index', {'bar': bar.slug}) }}">voir la carte</a>
+	</div>
+
+	{% if is_granted('ROLE_ADMIN') %}
+
+		<a href="{{ path('bar_edit', {'id': bar.id}) }}">edit</a>
+		{{ include('bar/_delete_form.html.twig') }}
+	{% endif %}
+
+
+{% endblock %}

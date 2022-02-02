@@ -1,0 +1,132 @@
+@import "app.scss";
+
+.secondPartHome {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+.descriptionEtJeu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.bar {
+    background: url(/public/build/images/chez_labbe.png);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-size: cover;
+    align-items: center;
+    height: 12rem;
+    h2 {
+        text-align: center;
+        color: beige;
+        text-shadow: rgb(0, 0, 0) 1px 0 10px;
+    }
+    a {
+        background: black;
+        color: white;
+        font-size: 20px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 165px;
+        text-align: center;
+        border: solid 0.5px white;
+    }
+}
+.jeu {
+    margin-top: 4rem;
+    background: url(/public/build/images/jeu.jpg);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-size: cover;
+    align-items: center;
+    height: 20rem;
+    h2 {
+        box-shadow: rgb(0, 0, 0);
+        text-align: center;
+        color: beige;
+        text-shadow: rgb(0, 0, 0) 1px 0 20px;
+    }
+    a {
+        background: black;
+        color: white;
+        font-size: 20px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 123px;
+        text-align: center;
+        border: solid 0.5px white;
+    }
+}
+.linkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.carte {
+    margin-top: 4rem;
+    background: url(/public/build/images/carte.png);
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-size: cover;
+    align-items: center;
+    height: 20rem;
+    h2 {
+        text-align: center;
+        color: beige;
+        text-shadow: rgb(0, 0, 0) 1px 0 7px;
+    }
+    a {
+        background: black;
+        color: white;
+        font-size: 20px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 170px;
+        text-align: center;
+        border: solid 0.5px white;
+    }
+}
+.contactUs {
+    margin-top: 4rem;
+    background: url(/public/build/images/contact.jpeg);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-size: cover;
+    align-items: center;
+    height: 20rem;
+    h2 {
+        text-align: center;
+        color: beige;
+        text-shadow: rgb(0, 0, 0) 1px 0 20px;
+    }
+    a {
+        background: black;
+        color: white;
+        font-size: 20px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 123px;
+        text-align: center;
+        border: solid 0.5px white;
+    }
+}

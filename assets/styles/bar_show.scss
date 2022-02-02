@@ -1,0 +1,65 @@
+@import "app.scss";
+
+.title {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    h1 {
+        font-size: 50px;
+        text-shadow: rgb(135, 153, 255) 1px 0 20px;
+    }
+}
+
+.card_bar {
+    margin: 1rem auto 1rem auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    .description_bar {
+        display: flex;
+        flex-direction: column;
+        margin: 0 2rem 1rem 2rem;
+    }
+    .bar_type {
+        color: white;
+        text-align: center;
+        margin: 1rem auto 1rem auto;
+        font-size: 40px;
+    }
+    .image_bar {
+        display: flex;
+        width: 100%;
+        img {
+            object-fit: cover;
+            object-position: center;
+            height: auto;
+            width: 100%;
+            margin: 1rem 2rem 1rem 2rem;
+        }
+    }
+}
+
+.button_back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    a {
+        background: black;
+        color: white;
+        font-size: 15px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 130px;
+        text-align: center;
+        border: solid 0.5px white;
+        margin: 1rem auto auto 2rem;
+    }
+}
+
+.bar_no_phone {
+    color: rgb(255, 186, 96);
+}
