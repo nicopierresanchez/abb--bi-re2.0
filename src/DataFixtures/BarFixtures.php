@@ -89,7 +89,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             $bar->setAddress($data[3]);
             $bar->setSlug($slugify->generate($bar->getName()));
             $bar->setPhone($data[4]);
-            $bar->setUser($this->getReference('user_'.$data[5]));
+            $bar->setUser($this->getReference('user_' . $data[5]));
 
             $manager->persist($bar);
             $this->addReference('bar_' . $key, $bar);

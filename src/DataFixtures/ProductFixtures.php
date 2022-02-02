@@ -83,7 +83,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
 
- 
+
         $slugify = new Slugify();
 
 
@@ -92,7 +92,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             $product->setName($data[0]);
             $product->setDescription($data[1]);
             $product->setPrice($data[2]);
-            $product->setBar($this->getReference('bar_'.$data[3]));
+            $product->setBar($this->getReference('bar_' . $data[3]));
             $product->setSlug($slugify->generate($product->getName()));
             $manager->persist($product);
         }

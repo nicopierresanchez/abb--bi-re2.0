@@ -1,71 +1,69 @@
 @import "app.scss";
 
-.game_list{
+.game_list {
     margin-top: 5rem;
-.morpion{
-    margin-top: 4rem;
-    background: url(/public/build/images/morpion.png);
-    margin: 2rem 2rem auto 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border-radius: 10px;
+    .morpion {
+        margin-top: 4rem;
+        background: url(/public/build/images/morpion.png);
+        margin: 2rem 2rem auto 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 10px;
 
-    background-size: cover;
-    align-items: center;
-    height: 10rem;
-    h2 {
-        box-shadow: rgb(0, 0, 0);
-        text-align: center;
-        color: rgb(255, 255, 255);
-        text-shadow: rgb(0, 0, 0) 1px 0 11px;
+        background-size: cover;
+        align-items: center;
+        height: 10rem;
+        h2 {
+            box-shadow: rgb(0, 0, 0);
+            text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: rgb(0, 0, 0) 1px 0 11px;
+        }
+        a {
+            background: black;
+            color: white;
+            font-size: 20px;
+            border-radius: 27px;
+            text-decoration: none;
+            width: 123px;
+            text-align: center;
+            border: solid 0.5px white;
+        }
     }
-    a {
-        background: black;
-        color: white;
-        font-size: 20px;
-        border-radius: 27px;
-        text-decoration: none;
-        width: 123px;
-        text-align: center;
-        border: solid 0.5px white;
+    .linkbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .carte {
+        margin-top: 4rem;
+        background: url(/public/build/images/carte.png);
+        height: 100%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        background-size: cover;
+        align-items: center;
+        height: 20rem;
+        h2 {
+            text-align: center;
+            color: beige;
+            text-shadow: rgb(0, 0, 0) 1px 0 7px;
+        }
+        a {
+            background: black;
+            color: white;
+            font-size: 20px;
+            border-radius: 27px;
+            text-decoration: none;
+            width: 170px;
+            text-align: center;
+            border: solid 0.5px white;
+        }
     }
 }
-.linkbox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-}
-.carte {
-    margin-top: 4rem;
-    background: url(/public/build/images/carte.png);
-    height: 100%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    background-size: cover;
-    align-items: center;
-    height: 20rem;
-    h2 {
-        text-align: center;
-        color: beige;
-        text-shadow: rgb(0, 0, 0) 1px 0 7px;
-    }
-    a {
-        background: black;
-        color: white;
-        font-size: 20px;
-        border-radius: 27px;
-        text-decoration: none;
-        width: 170px;
-        text-align: center;
-        border: solid 0.5px white;
-    }
-}
-}
-
-
