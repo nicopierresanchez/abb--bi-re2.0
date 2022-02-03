@@ -1,20 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register
+{% block title %}Créer un compte
 {% endblock %}
-
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('form') }}
+{% endblock %}
 {% block body %}
-	<h1>Register</h1>
-
-	{{ form_start(registrationForm) }}
-	{{ form_row(registrationForm.name) }}
-	{{ form_row(registrationForm.firstname) }}
-	{{ form_row(registrationForm.email) }}
-	{{ form_row(registrationForm.plainPassword, {
+	<div class="button_back">
+		<a href="/login">
+			⬅ retour</a>
+	</div>
+	<div class="index_title">
+		<h1>Créer un compte</h1>
+	</div>
+	<div class="form__register">
+			{{ form_start(registrationForm) }}
+		<div class="segment_form">
+			{{ form_row(registrationForm.name) }}
+		</div>
+		<div class="segment_form">
+			{{ form_row(registrationForm.firstname) }}
+		</div>
+		<div class="segment_form">
+			{{ form_row(registrationForm.email) }}</div>
+		<div class="segment_form">{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
-        }) }}
-	{{ form_row(registrationForm.agreeTerms) }}
-
-	<button type="submit" class="btn">Register</button>
-	{{ form_end(registrationForm) }}
+        }) }}</div>
+		<button type="submit" class="btn" style="color: rgb(116, 255, 69);">Register</button>
+		{{ form_end(registrationForm) }}
+	</div>
 {% endblock %}

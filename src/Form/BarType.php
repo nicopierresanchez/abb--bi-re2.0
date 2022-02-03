@@ -12,10 +12,10 @@ class BarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('user')
             ->add('image')
             ->add('name')
             ->add('type')
+            ->add('description')
             ->add('address')
             ->add('phone');
     }

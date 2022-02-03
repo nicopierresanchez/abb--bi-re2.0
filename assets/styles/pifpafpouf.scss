@@ -1,43 +1,37 @@
 @import "app.scss";
 
-.main {
-    color: white;
+.title {
+    color: rgb(255, 255, 255);
+    width: 100%;
     text-align: center;
-    .title {
-        color: rgb(255, 255, 255);
-        width: 100%;
-        text-align: center;
-        margin-top: 2rem;
+    margin-top: 2rem;
+    h1 {
         font-size: 50px;
         text-shadow: rgb(135, 153, 255) 1px 0 20px;
     }
-    .instructions {
-        margin-top: 2rem;
+}
+.main {
+    text-align: center;
+    h1 {
+        margin: 2rem auto 5rem auto;
+        text-align: center;
+        color: white;
     }
 }
-
-.game {
-    margin-top: 4rem;
+.button_back {
     display: flex;
     flex-direction: column;
-    .line {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+    justify-content: space-around;
 
-        .case {
-            width: 30%;
-            height: 5rem;
-            margin-bottom: 1rem;
-            font-size: 50px;
-
-            input {
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                background: white;
-                border-radius: 10px;
-            }
-        }
+    a {
+        background: black;
+        color: white;
+        font-size: 15px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 130px;
+        text-align: center;
+        border: solid 0.5px white;
+        margin: 1rem auto auto 2rem;
     }
 }

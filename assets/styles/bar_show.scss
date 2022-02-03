@@ -29,6 +29,18 @@
         margin: 1rem auto 1rem auto;
         font-size: 40px;
     }
+    .bar_phone {
+        color: white;
+        text-align: center;
+        margin: auto;
+        font-size: 30px;
+    }
+    .bar_address {
+        color: white;
+        text-align: center;
+        margin: auto;
+        font-size: 30px;
+    }
     .image_bar {
         display: flex;
         width: 100%;
@@ -38,6 +50,16 @@
             height: auto;
             width: 100%;
             margin: 1rem 2rem 1rem 2rem;
+        }
+    }
+    .bar_description {
+        width: 95%;
+        margin: auto;
+        margin-top: 2rem;
+        text-align: left;
+        .bar_address {
+            font-size: 2rem;
+            margin-bottom: 2rem;
         }
     }
 }
@@ -59,7 +81,45 @@
         margin: 1rem auto auto 2rem;
     }
 }
+.button_carte {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+
+    a {
+        background: black;
+        color: white;
+        font-size: 15px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 130px;
+        text-align: center;
+        border: solid 0.5px white;
+        margin: 1rem auto auto auto;
+    }
+}
 
 .bar_no_phone {
     color: rgb(255, 186, 96);
+}
+@media screen and (min-width: 900px) {
+    .card_bar {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: auto;
+        .image_bar {
+            display: flex;
+            width: 34%;
+        }
+        .description {
+            width: 1000px;
+            text-align: left;
+            .bar_address {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
 }

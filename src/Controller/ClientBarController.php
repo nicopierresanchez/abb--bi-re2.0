@@ -76,13 +76,15 @@ class ClientBarController extends AbstractController
      */
     public function edit(Request $request, Bar $bar, EntityManagerInterface $entityManager): Response
     {
+        /**@var User $user */
+        $user = $this->getUser();
         $form = $this->createForm(ClientBarType::class, $bar);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('client_bar_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('client_bar_index',  ['id' => $user->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('client_bar/edit.html.twig', [

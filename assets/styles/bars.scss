@@ -1,9 +1,33 @@
 @import "app.scss";
+.effetneon {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(18, 110, 230),
+        0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    animation: lumiere 1s infinite ease;
+}
 
+.effetneon span {
+    font-size: 6rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+}
 .main {
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem auto 1rem;
+    
 }
 .card_bar {
     margin: 1rem auto 1rem auto;
@@ -20,12 +44,76 @@
     }
     .image_bar {
         display: flex;
-        width:6rem;
+        width: 6rem;
         img {
             object-fit: cover;
             object-position: center;
             height: 6rem;
             width: 6rem;
         }
+    }
+}
+@media screen and (min-width: 900px) {
+    .main {
+        gap: 2rem;
+        margin-left: 17rem;
+        margin-right: 17rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        max-width: 100%;
+        justify-content: space-between;
+    }
+    .card_bar {
+        border: solid 0.5px white;
+        width: 48%;
+        height: 150px;
+        justify-content: space-between;
+        .description_bar {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-left: 2%;
+            .bar_name {
+                font-size: 20px;
+            }
+        }
+        .image_bar {
+            display: flex;
+            width: 150px;
+            img {
+                object-fit: cover;
+                object-position: center;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+@keyframes lumiere {
+    0%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(18, 110, 230),
+        0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    }
+   50%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(18, 110, 230),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
+    }
+    100%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(18, 110, 230),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
     }
 }

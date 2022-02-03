@@ -16,6 +16,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://media-cdn.tripadvisor.com/media/photo-s/0e/59/c0/57/all-credits-for-this.jpg',
             'fumoir a viande',
             '4 avenue de la soif',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             661548782,
             3
         ],
@@ -24,6 +25,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://hopscotchpub.com/wp-content/uploads/2017/09/IMG_8189_petite.jpg',
             'Pub',
             ' 3 Rue Baour Lormian, 31000 Toulouse',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             951623643,
             4
         ], [
@@ -31,6 +33,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://media-cdn.tripadvisor.com/media/photo-s/08/77/9a/33/our-stage-area.jpg',
             'Pub',
             '33 All. Jean Jaurès, 31000 Toulouse',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             581342815,
             6
         ], [
@@ -38,6 +41,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://cdt31.media.tourinsoft.eu/upload/Cale-Seche.jpg?width=780&height=560&crop=1',
             'Bar',
             '41 Rue Léon Gambetta, 31000 Toulouse',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             null,
             5
         ], [
@@ -45,6 +49,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://s3-eu-west-1.amazonaws.com/privateaser-media/etab_photos/3032/450x300/262321.jpg',
             'Bar à cocktails',
             '4 Rue Charles de Rémusat, 31000 Toulouse',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             null,
             4
         ], [
@@ -52,6 +57,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://static.actu.fr/uploads/2017/12/deliirum-960x640.jpg',
             'Bar',
             '54 All. Jean Jaurès, 31000 Toulouse',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             967297996,
             3
         ], [
@@ -59,6 +65,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://media-cdn.tripadvisor.com/media/photo-s/1b/ea/69/8f/we-love-live-music-at.jpg',
             'Bar',
             '33 Bd Maréchal Leclerc, 31000 Toulouse',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             534308234,
             2
         ], [
@@ -66,6 +73,7 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             'https://cdt31.media.tourinsoft.eu/upload/LONDON-INTERweb-2.jpg',
             'Bar',
             '14 Rue des Prêtres, Rue des Pretres, 31000 Toulouse',
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
             562265310,
             1
         ],
@@ -88,8 +96,9 @@ class BarFixtures extends Fixture implements DependentFixtureInterface
             $bar->setType($data[2]);
             $bar->setAddress($data[3]);
             $bar->setSlug($slugify->generate($bar->getName()));
-            $bar->setPhone($data[4]);
-            $bar->setUser($this->getReference('user_' . $data[5]));
+            $bar->setDescription($data[4]);
+            $bar->setPhone($data[5]);
+            $bar->setUser($this->getReference('user_' . $data[6]));
 
             $manager->persist($bar);
             $this->addReference('bar_' . $key, $bar);

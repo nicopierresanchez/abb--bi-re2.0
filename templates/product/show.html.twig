@@ -2,32 +2,31 @@
 
 {% block title %}Product
 {% endblock %}
-
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
 {% block body %}
-	<h1>Product</h1>
-
+<div class="button_back">
+		<a href="{{  path('bar_show', {'bar': product.bar.slug}) }}">
+			⬅ back to list</a>
+	</div>
+<div class= "index_title">
+	<h1>{{ product.name }}</h1>
+</div>
 	<table class="table">
-		<tbody>
-			<tr>
-				<th>Id</th>
-				<td>{{ product.id }}</td>
-			</tr>
-			<tr>
-				<th>Name</th>
-				<td>{{ product.name }}</td>
-			</tr>
+		<tbody>			
 			<tr>
 				<th>Description</th>
 				<td>{{ product.description }}</td>
 			</tr>
 			<tr>
-				<th>Price</th>
-				<td>{{ product.price }}</td>
+				<th>Prix</th>
+				<td>{{ product.price|number_format(2) }}€</td>
 			</tr>
 		</tbody>
 	</table>
 
-	<a href="{{ path('bar_product_index',{'bar': product.bar.slug}) }}">back to list</a>
+	<a ></a>
 	{% if is_granted('ROLE_ADMIN') %}
 		<a href="{{ path('bar_product_edit', {'id': product.id, 'bar': product.bar.slug}) }}">edit</a>
 

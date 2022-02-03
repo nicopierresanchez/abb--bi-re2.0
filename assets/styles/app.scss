@@ -1,5 +1,77 @@
 @import "~bootstrap/scss/bootstrap";
 
+.button_back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    a {
+        background: black;
+        color: white;
+        font-size: 15px;
+        border-radius: 27px;
+        text-decoration: none;
+        width: 130px;
+        text-align: center;
+        border: solid 0.5px white;
+        margin: 1rem auto auto 2rem;
+    }
+}
+
 body {
-    background: black;
+    background-image: url("http://iwallpapers2.free.fr/images/Photographie/Black_Collection/Texture_boucles_vintage_dark.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 100vh;
+
+
+    th,
+    td {
+        color: white;
+    }
+    .index_title {
+        width: 100%;
+        margin-top: 2rem;
+        h1 {
+            color: white;
+            text-align: center;
+        }
+    }
+    .form-label {
+        color: white;
+    }
+    .btn {
+        color: white;
+    }
+    div.mb-3 {
+        width: 26rem;
+        margin: auto;
+    }
+    .save {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .btn {
+            color: white;
+        }
+        .btn:hover {
+            color: rgb(49, 196, 0);
+        }
+    }
+    .delete {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .btn {
+            color: white;
+        }
+        .btn:hover {
+            color: rgb(216, 24, 24);
+        }
+    }
 }

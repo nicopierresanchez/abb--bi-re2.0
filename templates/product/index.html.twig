@@ -1,32 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Product index
+{% block title %}Carte
 {% endblock %}
-
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
 {% block body %}
-	<h1>Product index</h1>
-
+	<div class="button_back">
+		<a href="{{ path('bar_show',{'bar': bar.slug}) }}">
+			⬅ retour</a>
+	</div>
+	<div class="index_title">
+		<h1>Carte du
+			{{bar.name}}</h1>
+	</div>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>Name</th>
+				<th>Nom</th>
 				<th>Description</th>
-				<th>Price</th>
-				<th>actions</th>
+				<th>Prix</th>
+				
 			</tr>
 		</thead>
 		<tbody>
 			{% for product in products %}
 				<tr>
-					<td>{{ product.id }}</td>
 					<td>{{ product.name }}</td>
 					<td>{{ product.description }}</td>
-					<td>{{ product.price }}</td>
+					<td>{{ product.price|number_format(2) }}€</td>
 					<td>
-						<a href="{{ path('bar_product_show', {'id': product.id, 'bar': product.bar.slug}) }}">show</a>
-						{% if is_granted('ROLE_ADMIN') %}
-							<a href="{{ path('bar_product_edit', {'id': product.id, 'bar': product.bar.slug}) }}">edit</a>
+						<a href="{{ path('bar_product_show', {'id': product.id, 'bar': product.bar.slug}) }}">Details</a>
+						{% if app.user %}
+
+							{% if app.user.id is same as bar.user.id %}
+								{{ include('product/_delete_form.html.twig') }}
+
+								<a href="{{ path('bar_product_edit', {'id': product.id, 'bar': product.bar.slug}) }}">edit</a>
+							{% endif %}
 						{% endif %}
 					</td>
 				</tr>
@@ -35,9 +46,14 @@
 					<td colspan="5">no records found</td>
 				</tr>
 			{% endfor %}
+
+
 		</tbody>
 	</table>
-	{% if is_granted('ROLE_ADMIN') %}
-		<a href="{{ path('bar_product_new',{ 'bar': bar.slug}) }}">Create new</a>
+	{% if app.user %}
+
+		{% if app.user.id is same as bar.user.id %}
+			<a href="{{ path('bar_product_new',{ 'bar': bar.slug}) }}">Create new</a>
+		{% endif %}
 	{% endif %}
 {% endblock %}

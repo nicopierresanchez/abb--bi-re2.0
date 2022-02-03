@@ -1,0 +1,131 @@
+@import "app.scss";
+
+.effetneon {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px rgb(18, 110, 230), 0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    animation: lumiere 1s infinite ease;
+}
+
+.effetneon span {
+    font-size: 6rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+form {
+    width: calc(100% - 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: auto;
+    margin-top: 5rem;
+
+    .form__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+
+        label {
+            margin: 0;
+            padding-left: 1rem;
+            color: white; /*à modifier*/
+
+            &:after {
+                content: "*";
+                color: red;
+                margin-left: 2px;
+            }
+        }
+
+        input {
+            border-radius: 50px;
+            padding-left: 2rem;
+        }
+
+        input:focus {
+            outline: none !important;
+        }
+    }
+
+    .form__login {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        button {
+            background: none;
+            color: white;
+            border: none;
+            font-size: 2rem;
+        }
+
+        button:hover {
+            color: rgb(49, 196, 0);
+        }
+    }
+}
+.form_register {
+    width: calc(100% - 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: auto;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+.segment_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.1rem;
+    text-align: center;
+
+    label {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    input {
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+.new_count {
+    width: 80%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.error {
+    color: white;
+}
+#registration_form_agreeTerms {
+    display: flex;
+    color: white;
+}
+.btn {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 2rem;
+}
+
+.btn:hover {
+    color: rgb(116, 255, 69);
+}
+@media screen and (min-width: 900px) {
+    form {
+        width: 30%;
+    }
+}

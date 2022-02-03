@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GameController!
+{% block title %}Tirage au sort
 {% endblock %}
 {% block stylesheets %}
 	{{ parent() }}
@@ -8,32 +8,37 @@
 
 {% endblock %}
 {% block body %}
+	<div class="button_back">
+		<a href="{{ path('game_index') }}">
+			⬅ back to list</a>
+	</div>
+	<div class="main">
 
-	 <div id="main">
-        <div>
-            <title>Tirage au sort des noms</title>
-            <meta charset="utf-8">
-        </div>
-        <h1>TIRAGE AU SORT</h1>
-        <div id="parametre">
-            <button onclick="add_nom()">Ajouter</button>
-             <button onclick="tirage()">GO</button>
-        </div> 
-        <script type="text/javascript">
-            //Déclarer un tableau
-            var tab=new Array();
-            function add_nom(){
-                tab.push(prompt("Saisir un nom"));
-            }
-            function tirage(){
-                if(tab.length>0){
-            /*Math.random()*tab.length renvoie un nombre réel entre 0 et la taille du tableau tab.length et on arrondit à l'entier inférieur par la fonction Math.floor()*/
-                var rand = Math.floor(Math.random()*tab.length);
-                alert("La personne qui paye sa tournée est "+tab[rand]);
-                }
-                else alert("Veillez ajouter des noms");
-            }
-        </script>
-    </div>
+		<h1>TIRAGE AU SORT</h1>
+		<div class="parametre">
+			<button onclick="add_nom()">Ajouter</button>
+			<button onclick="tirage()">GO</button>
+		</div>
+
+
+		<script type="text/javascript">
+			// Déclarer un tableau
+var tab = new Array();
+function add_nom() {
+tab.push(prompt("Saisir un nom"));
+}
+function tirage() {
+if (tab.length > 0) { /*Math.random()*tab.length renvoie un nombre réel entre 0 et la taille du tableau tab.length et on arrondit à l'entier inférieur par la fonction Math.floor()*/
+var rand = Math.floor(Math.random() * tab.length);
+alert("La personne qui paye sa tournée est " + tab[rand]);
+} else 
+alert("Veillez ajouter des noms");
+
+
+}
+}
+		</script>
+
+	</div>
 
 {% endblock %}
