@@ -19,7 +19,15 @@
 }
 
 body {
-    background: black;
+    background-image: url("http://iwallpapers2.free.fr/images/Photographie/Black_Collection/Texture_boucles_vintage_dark.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 100vh;
+
+
     th,
     td {
         color: white;
@@ -32,42 +40,38 @@ body {
             text-align: center;
         }
     }
-    .form-label{
+    .form-label {
         color: white;
     }
-    .btn{
+    .btn {
         color: white;
-        
     }
     div.mb-3 {
         width: 26rem;
-        margin:auto
-       }
-    .save{
-        margin:auto;
+        margin: auto;
+    }
+    .save {
+        margin: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        .btn{
+        .btn {
             color: white;
-            
         }
-        .btn:hover{
+        .btn:hover {
             color: rgb(49, 196, 0);
         }
     }
-    .delete{
-        margin:auto;
+    .delete {
+        margin: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        .btn{
+        .btn {
             color: white;
-            
         }
-        .btn:hover{
+        .btn:hover {
             color: rgb(216, 24, 24);
         }
-    } 
-        
+    }
 }

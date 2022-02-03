@@ -64,13 +64,16 @@ class BarController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="bar_edit", methods={"GET", "POST"})
+     * @ParamConverter("id", options={"mapping": {"bar": "id"}})
      */
-    public function edit(Request $request, Bar $bar, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Bar $bar, EntityManagerInterface $entityManager, Slugify $slugify): Response
     {
         $form = $this->createForm(BarType::class, $bar);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($bar);
+            $bar->setSlug($slugify->generate($bar->getName()));
             $entityManager->flush();
 
             return $this->redirectToRoute('bar_index', [], Response::HTTP_SEE_OTHER);

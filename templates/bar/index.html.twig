@@ -28,10 +28,7 @@
 						<div class="bar_phone">0{{ bar.phone }}</div>
 					{% endif %}
 					<a href="{{ path('bar_show', {'bar': bar.slug}) }}">Voir plus</a>
-					{% if is_granted('ROLE_ADMIN') %}
-						<a href="{{ path('bar_edit', {'bar': bar.slug,'id': bar.id}) }}">edit</a>
-						<a href="{{ path('bar_delete', {'bar': bar.slug,'id': bar.id}) }}">Delete</a>
-					{% endif %}
+
 				</div>
 				<div class="image_bar">
 					<img src="{{ bar.image }}" alt="image">
