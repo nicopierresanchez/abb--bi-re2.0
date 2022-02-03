@@ -43,6 +43,7 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($product);
+            $product->setBar($bar);
             $product->setSlug($slugify->generate($product->getName()));
             $entityManager->flush();
             return $this->redirectToRoute('bar_product_index', ['bar' => $bar->getslug()], Response::HTTP_SEE_OTHER);
@@ -87,7 +88,7 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/product/{id}", name="delete", methods={"POST"})
+     * @Route("/product/delete/{id}", name="delete", methods={"POST"})
      */
     public function delete(Request $request, Product $product, EntityManagerInterface $entityManager, Bar $bar): Response
     {

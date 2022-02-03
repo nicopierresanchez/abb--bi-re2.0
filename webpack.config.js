@@ -52,6 +52,8 @@ Encore
     .addStyleEntry('morpion', './assets/styles/morpion.scss')
     .addStyleEntry('gameIndex', './assets/styles/gameIndex.scss')
     .addStyleEntry('pifpafpouf', './assets/styles/pifpafpouf.scss')
+    .addStyleEntry('contact', './assets/styles/contact.scss')
+    .addStyleEntry('form', './assets/styles/form.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

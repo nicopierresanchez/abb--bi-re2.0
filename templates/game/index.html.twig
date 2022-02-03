@@ -8,11 +8,22 @@
 {% endblock %}
 
 {% block body %}
+	<div class="container">
+        <div class="effetneon">
+            Jeux<br>
+            <span></span>
+        </div>
+    </div>
 	<div class="game_list">
 		<div class="morpion">
 
-			<h2>Morpion</h2>
+			<h1>Morpion</h1>
 			<a class="button" href="{{ path('game_morpion') }}">Jouer</a>
+		</div>
+		<div class="pifpafpouf">
+
+			<h1>Pifpafpouf</h1>
+			<a class="button" href="{{ path('game_pifpafpouf') }}">Jouer</a>
 		</div>
 
 

@@ -16,6 +16,7 @@ class BarType extends AbstractType
             ->add('image')
             ->add('name')
             ->add('type')
+            ->add('description')
             ->add('address')
             ->add('phone');
     }

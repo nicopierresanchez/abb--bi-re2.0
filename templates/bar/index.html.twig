@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}trouver son bar
+{% block title %}Trouver son bar
 {% endblock %}
 {% block stylesheets %}
 	{{ parent() }}
@@ -9,7 +9,14 @@
 {% endblock %}
 
 {% block body %}
+<div class="container">
+        <div class="effetneon">
+            Les bars!<br>
+            <span></span>
+        </div>
+    </div>
 	<div class="main">
+		
 		{% for bar in bars %}
 			<div class="card_bar">
 				<div class="description_bar">

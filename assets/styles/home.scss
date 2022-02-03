@@ -1,5 +1,30 @@
 @import "app.scss";
 
+.effetneon {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(18, 110, 230),
+        0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    animation: lumiere 1s infinite ease;
+}
+
+.effetneon span {
+    font-size: 6rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
 .secondPartHome {
     margin-top: 4rem;
     display: flex;
@@ -20,13 +45,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
+    border: solid 0.5px white;
     background-size: cover;
     align-items: center;
     height: 12rem;
     h2 {
         text-align: center;
         color: beige;
+        font-size: 40px;
         text-shadow: rgb(0, 0, 0) 1px 0 10px;
     }
     a {
@@ -47,7 +73,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
+    border: solid 0.5px white;
     background-size: cover;
     align-items: center;
     height: 20rem;
@@ -83,7 +109,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
+    border: solid 0.5px white;
     background-size: cover;
     align-items: center;
     height: 20rem;
@@ -110,7 +136,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
+    border: solid 0.5px white;
     background-size: cover;
     align-items: center;
     height: 20rem;
@@ -128,5 +154,65 @@
         width: 123px;
         text-align: center;
         border: solid 0.5px white;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .descriptionEtJeu {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        margin: 2rem auto 0 auto;
+        .bar {
+            width: 48%;
+            height: 20rem;
+        }
+        .jeu {
+            margin-top: 0;
+            width: 48%;
+            height: 20rem;
+        }
+    }
+    .linkbox {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2rem auto 1rem auto;
+        width: 80%;
+        .carte {
+            margin-top: 0;
+            width: 48%;
+            height: 20rem;
+        }
+        .contactUs {
+            margin-top: 0;
+            width: 48%;
+            height: 20rem;
+        }
+    }
+}
+@keyframes lumiere {
+    0%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(18, 110, 230),
+        0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    }
+   50%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(18, 110, 230),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
+    }
+    100%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(18, 110, 230),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
     }
 }

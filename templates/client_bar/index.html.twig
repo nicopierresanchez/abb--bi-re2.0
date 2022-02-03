@@ -2,36 +2,38 @@
 
 {% block title %}Bar index
 {% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
 
 {% block body %}
-	<h1>Bar index</h1>
+<div class="button_back">
+		<a href="{{ path('user_show', {'id': app.user.id}) }}">
+			⬅ retour</a>
+	</div>
+	<div class="index_title">
+		<h1>Mes Bars</h1>
+	</div>
 
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Name</th>
-				<th>Type</th>
 				<th>Address</th>
 				<th>Phone</th>
-				<th>Slug</th>
-				<th>Image</th>
 				<th>actions</th>
 			</tr>
 		</thead>
 		<tbody>
 			{% for bar in bars %}
 				<tr>
-					<td>{{ bar.id }}</td>
 					<td>{{ bar.name }}</td>
-					<td>{{ bar.type }}</td>
 					<td>{{ bar.address }}</td>
 					<td>{{ bar.phone }}</td>
-					<td>{{ bar.slug }}</td>
-					<td>{{ bar.image }}</td>
 					<td>
 						<a href="{{ path('client_bar_show', {'id': bar.id}) }}">show</a>
 						<a href="{{ path('client_bar_edit', {'id': bar.id}) }}">edit</a>
+						<a href="{{ path('bar_product_index', {'bar': bar.slug}) }}">voir la carte</a>
 					</td>
 				</tr>
 			{% else %}
@@ -39,8 +41,10 @@
 					<td colspan="8">no records found</td>
 				</tr>
 			{% endfor %}
+
 		</tbody>
 	</table>
 
 	<a href="{{ path('client_bar_new') }}">Create new</a>
+
 {% endblock %}

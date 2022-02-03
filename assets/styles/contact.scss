@@ -1,0 +1,62 @@
+@import "app.scss";
+.effetneon {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(18, 110, 230),
+        0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    animation: lumiere 1s infinite ease;
+}
+
+.effetneon span {
+    font-size: 6rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.message {
+    color: white;
+    text-align: center;
+    margin-top: 3rem;
+}
+@media screen and (min-width: 900px) {
+    .message {
+        width: 80%;
+        margin: 5rem auto auto auto;
+    }
+}
+@keyframes lumiere {
+    0%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(18, 110, 230),
+        0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    }
+   50%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(18, 110, 230),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
+    }
+    100%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(18, 110, 230),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
+    }
+}

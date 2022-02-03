@@ -126,3 +126,46 @@ div.card div a {
         background: rgb(0, 0, 0);
     }
 }
+@media screen and (min-width: 900px) {
+    .topnav a img {
+        width: 65px;
+    }
+    #myLinks a {
+        font-size: 25px;
+        margin-right: 3%;
+    }
+    #myLinks a:hover {
+
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px rgb(18, 110, 230), 0 0 77px rgb(18, 110, 230),
+            0 0 100px rgb(18, 110, 230);
+        animation: lumiere 1s infinite ease;
+    }
+}
+@keyframes lumiere {
+    0%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 42px rgb(0, 51, 118),
+        0 0 77px rgb(18, 110, 230),
+        0 0 100px rgb(18, 110, 230);
+    }
+   50%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(0, 61, 141),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
+    }
+    100%{
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 32px rgb(0, 75, 174),
+        0 0 87px rgb(18, 110, 230),
+        0 0 120px rgb(18, 110, 230);
+    }
+}
