@@ -9,7 +9,7 @@
 {% block body %}
 	<div class="button_back">
 		<a href="/login">
-			⬅ retour</a>
+			⬅ Retour</a>
 	</div>
 	<div class="index_title">
 		<h1>Créer un compte</h1>
@@ -17,17 +17,21 @@
 	<div class="form__register">
 			{{ form_start(registrationForm) }}
 		<div class="segment_form">
-			{{ form_row(registrationForm.name) }}
+			{{ form_row(registrationForm.name , {
+            label: 'Nom'
+        }) }}
 		</div>
 		<div class="segment_form">
-			{{ form_row(registrationForm.firstname) }}
+			{{ form_row(registrationForm.firstname , {
+            label: 'Prenom'
+        }) }}
 		</div>
 		<div class="segment_form">
 			{{ form_row(registrationForm.email) }}</div>
 		<div class="segment_form">{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+            label: 'Mot de passe'
         }) }}</div>
-		<button type="submit" class="btn" style="color: rgb(116, 255, 69);">Register</button>
+		<button type="submit" class="btn" style="color: rgb(116, 255, 69);">S'enregister</button>
 		{{ form_end(registrationForm) }}
 	</div>
 {% endblock %}

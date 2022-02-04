@@ -54,6 +54,7 @@ Encore
     .addStyleEntry('pifpafpouf', './assets/styles/pifpafpouf.scss')
     .addStyleEntry('contact', './assets/styles/contact.scss')
     .addStyleEntry('form', './assets/styles/form.scss')
+    .addStyleEntry('carte', './assets/styles/carte.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

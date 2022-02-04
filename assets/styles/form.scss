@@ -124,6 +124,10 @@ form {
 .btn:hover {
     color: rgb(116, 255, 69);
 }
+.form__register > form:nth-child(1) > div:nth-child(6) > label:nth-child(1) {
+    color: white;
+   }
+   
 @media screen and (min-width: 900px) {
     form {
         width: 30%;

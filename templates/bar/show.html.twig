@@ -13,7 +13,7 @@
 {% block body %}
 	<div class="button_back">
 		<a href="{{ path('bar_index') }}">
-			⬅ back to list</a>
+			⬅ Retour à la liste</a>
 	</div>
 	<div class="title">
 		<h1>{{ bar.name }}</h1>
@@ -36,9 +36,10 @@
 			<div class="bar_description">{{ bar.description }}</div>
 		</div>
 {% if is_granted('ROLE_ADMIN') %}
-
-		<a href="{{ path('bar_edit', {'id': bar.id}) }}">edit</a>
+<div class="action">
+		<a href="{{ path('bar_edit', {'id': bar.id}) }}">Modifier</a>
 		{{ include('bar/_delete_form.html.twig') }}
+		</div>
 	{% endif %}
 
 	</div>
