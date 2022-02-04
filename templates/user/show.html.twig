@@ -5,7 +5,7 @@
 
 {% block body %}
 	{% if app.user.id is same as user.id %}
-		
+
 		<div class="index_title">
 			<h1>Mon profil</h1>
 		</div>
@@ -26,12 +26,12 @@
 			</tbody>
 		</table>
 		<div class="action">
-		<a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-		{% if is_granted('ROLE_ADMIN') %}
+			<a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+			{% if is_granted('ROLE_ADMIN') %}
 
-			{{ include('user/_delete_form.html.twig') }}
-		{% endif %}
-		<a href="{{ path('client_bar_index', {'id': user.id}) }}">gerer mon/mes bars</a>
+				{{ include('user/_delete_form.html.twig') }}
+			{% endif %}
+			<a href="{{ path('client_bar_index', {'id': user.id}) }}">gerer mon/mes bars</a>
 		</div>
 	{% else %}
 		<h1>houlà! il semblerait que tu sois perdu !</h1>

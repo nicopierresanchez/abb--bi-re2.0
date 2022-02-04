@@ -35,17 +35,14 @@
 			<div class="bar_address">{{ bar.address }}</div>
 			<div class="bar_description">{{ bar.description }}</div>
 		</div>
-{% if is_granted('ROLE_ADMIN') %}
-<div class="action">
-		<a href="{{ path('bar_edit', {'id': bar.id}) }}">Modifier</a>
-		{{ include('bar/_delete_form.html.twig') }}
-		</div>
-	{% endif %}
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="action">
+				<a href="{{ path('bar_edit', {'id': bar.id}) }}">Modifier</a>
+				{{ include('bar/_delete_form.html.twig') }}
+			</div>
+		{% endif %}
 
 	</div>
-
-
-	
 
 
 {% endblock %}

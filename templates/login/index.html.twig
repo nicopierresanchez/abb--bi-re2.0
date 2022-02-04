@@ -30,21 +30,14 @@
 				<label for="password">Mot de passe:</label>
 				<input type="password" id="password" name="_password"/>
 			</div>
-
-			<input
-			type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-
-			{# If you want to control the URL the user is redirected to on success
-																	        <input type="hidden" name="_target_path" value="/account"/> #}
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 			<div class="form__login">
-
 				<button type="submit">Se connecter</button>
 			</div>
 		</form>
 		<div class="new_count">
-			<h3>Pas encore de compte ?<a href="/register">créer un compte</a>
+			<h3>Pas encore de compte ?<a href="/register">créer</a>
 			</h3>
-			
+
 		</div>
 	{% endblock %}

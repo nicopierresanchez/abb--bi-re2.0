@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-<div class="button_back">
+	<div class="button_back">
 		<a href="{{ path('user_show', {'id': app.user.id}) }}">
 			⬅ retour</a>
 	</div>
@@ -33,7 +33,7 @@
 					<td>
 						<a href="{{ path('client_bar_show', {'id': bar.id}) }}">Voir</a>
 						<a href="{{ path('client_bar_edit', {'id': bar.id}) }}">Modifier</a>
-						
+
 						<a href="{{ path('bar_product_index', {'bar': bar.slug}) }}">carte</a>
 						{{ include('client_bar/_delete_form.html.twig') }}
 					</td>
@@ -46,7 +46,7 @@
 
 		</tbody>
 	</table>
-<div class="action">
-	<a href="{{ path('client_bar_new') }}">Créer</a>
-</div>
+	<div class="action">
+		<a href="{{ path('client_bar_new') }}">Créer</a>
+	</div>
 {% endblock %}
