@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Bar;
+use App\Entity\Comment;
+use App\Entity\User;
 use App\Form\BarType;
 use App\Repository\BarRepository;
 use App\Service\Slugify;
@@ -33,6 +35,8 @@ class BarController extends AbstractController
      */
     public function new(Request $request, Slugify $slugify, EntityManagerInterface $entityManager): Response
     {
+        /** @var UserInterface $user */
+        $user = $this->getUser();
         $bar = new Bar();
         $form = $this->createForm(BarType::class, $bar);
         $form->handleRequest($request);
@@ -55,10 +59,24 @@ class BarController extends AbstractController
      * @Route("/{bar}", name="bar_show", methods={"GET"})
      * @ParamConverter("bar", options={"mapping": {"bar": "slug"}})
      */
-    public function show(Bar $bar): Response
+    public function show(Bar $bar, Request $request, EntityManagerInterface $entityManager, Comment $commment): Response
     {
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $bar);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($comment);
+            $comment->setUser($this->getUser());
+            $entityManager->flush();
+
+        }
+
         return $this->render('bar/show.html.twig', [
             'bar' => $bar,
+            'form' => $form,
+            'comment' => $commment
+            
         ]);
     }
 

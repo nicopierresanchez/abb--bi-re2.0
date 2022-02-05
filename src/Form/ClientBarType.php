@@ -13,10 +13,11 @@ class ClientBarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
+            ->add('name',null, array('label' => 'Nom'))
             ->add('type')
-            ->add('address')
-            ->add('phone')
+            ->add('address',null, array('label' => 'Adresse'))
+            ->add('description')
+            ->add('phone',null, array('label' => 'Telephone'))
             ->add('image');
     }
 

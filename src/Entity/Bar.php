@@ -65,6 +65,11 @@ class Bar
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Comment::class, inversedBy="bar")
+     */
+    private $comment;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -197,6 +202,18 @@ class Bar
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getComment(): ?Comment
+    {
+        return $this->comment;
+    }
+
+    public function setComment(?Comment $comment): self
+    {
+        $this->comment = $comment;
 
         return $this;
     }
