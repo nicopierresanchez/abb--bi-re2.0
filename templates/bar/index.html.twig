@@ -9,36 +9,38 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-        <div class="effetneon">
-            Les bars!<br>
-            <span></span>
-        </div>
-    </div>
-	<div class="main">
-		
-		{% for bar in bars %}
-			<div class="card_bar">
-				<div class="description_bar">
-					<div class="bar_name">{{ bar.name }}</div>
-					<div class="bar_type">{{ bar.type }}</div>
-					{% if bar.phone is null %}
-						<div class="bar_phone">téléphone non renseigné</div>
-					{% else %}
-						<div class="bar_phone">0{{ bar.phone }}</div>
-					{% endif %}
-					<a href="{{ path('bar_show', {'bar': bar.slug}) }}">Voir plus</a>
-
-				</div>
-				<div class="image_bar">
-					<img src="{{ bar.image }}" alt="image">
-				</div>
+	<div class="container">
+		<div class="effetneon">
+			Les bars!<br>
+				<span></span>
 			</div>
+		</div>
+		<div class="main">
 
-			{% else %}
-		{% endfor %}
-	</div>
-	{% if is_granted('ROLE_ADMIN') %}
-		<a href="{{ path('bar_new') }}">Create new</a>
-	{% endif %}
-{% endblock %}
+			{% for bar in bars %}
+				<div class="card_bar">
+					<div class="description_bar">
+						<div class="bar_name">{{ bar.name }}</div>
+						<div class="bar_type">{{ bar.type }}</div>
+						{% if bar.phone is null %}
+							<div class="bar_phone">téléphone non renseigné</div>
+						{% else %}
+							<div class="bar_phone">0{{ bar.phone }}</div>
+						{% endif %}
+						<a href="{{ path('bar_show', {'bar': bar.slug}) }}">Voir plus</a>
+
+					</div>
+					<div class="image_bar">
+						<img src="{{ bar.image }}" alt="image">
+					</div>
+				</div>
+
+				{% else %}
+			{% endfor %}
+		</div>
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="action">
+				<a href="{{ path('bar_new') }}">Créer</a>
+			</div>
+		{% endif %}
+	{% endblock %}
