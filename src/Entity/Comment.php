@@ -26,11 +26,6 @@ class Comment
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=Bar::class, mappedBy="comment")
-     */
-    private $bar;
-
-    /**
      * @ORM\Column(type="text")
      */
     private $text;
@@ -45,10 +40,10 @@ class Comment
      */
     private $datetime;
 
-    public function __construct()
-    {
-        $this->bar = new ArrayCollection();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity=Bar::class, inversedBy="comments")
+     */
+    private $bar;
 
     public function getId(): ?int
     {
@@ -63,36 +58,6 @@ class Comment
     public function setUser(?user $user): self
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Bar[]
-     */
-    public function getBar(): Collection
-    {
-        return $this->bar;
-    }
-
-    public function addBar(Bar $bar): self
-    {
-        if (!$this->bar->contains($bar)) {
-            $this->bar[] = $bar;
-            $bar->setComment($this);
-        }
-
-        return $this;
-    }
-
-    public function removeBar(Bar $bar): self
-    {
-        if ($this->bar->removeElement($bar)) {
-            // set the owning side to null (unless already changed)
-            if ($bar->getComment() === $this) {
-                $bar->setComment(null);
-            }
-        }
 
         return $this;
     }
@@ -129,6 +94,18 @@ class Comment
     public function setDatetime(\DateTimeInterface $datetime): self
     {
         $this->datetime = $datetime;
+
+        return $this;
+    }
+
+    public function getBar(): ?Bar
+    {
+        return $this->bar;
+    }
+
+    public function setBar(?Bar $bar): self
+    {
+        $this->bar = $bar;
 
         return $this;
     }

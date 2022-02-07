@@ -66,13 +66,15 @@ class Bar
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Comment::class, inversedBy="bar")
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="bar")
      */
-    private $comment;
+    private $comments;
+
 
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -206,15 +208,34 @@ class Bar
         return $this;
     }
 
-    public function getComment(): ?Comment
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getComments(): Collection
     {
-        return $this->comment;
+        return $this->comments;
     }
 
-    public function setComment(?Comment $comment): self
+    public function addComment(Comment $comment): self
     {
-        $this->comment = $comment;
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setBar($this);
+        }
 
         return $this;
     }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getBar() === $this) {
+                $comment->setBar(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
