@@ -12,12 +12,12 @@ class BarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('image')
-            ->add('name')
+            ->add('name', null, array('label' => 'Nom'))
             ->add('type')
+            ->add('address', null, array('label' => 'Adresse'))
             ->add('description')
-            ->add('address')
-            ->add('phone');
+            ->add('phone', null, array('label' => 'Telephone'))
+            ->add('image');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

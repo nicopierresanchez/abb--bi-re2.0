@@ -3,9 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Bar;
+use App\Entity\Comment;
+use App\Entity\User;
 use App\Form\BarType;
+use App\Form\CommentType;
 use App\Repository\BarRepository;
+use App\Repository\CommentRepository;
 use App\Service\Slugify;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,6 +38,8 @@ class BarController extends AbstractController
      */
     public function new(Request $request, Slugify $slugify, EntityManagerInterface $entityManager): Response
     {
+        /** @var UserInterface $user */
+        $user = $this->getUser();
         $bar = new Bar();
         $form = $this->createForm(BarType::class, $bar);
         $form->handleRequest($request);
@@ -52,13 +59,31 @@ class BarController extends AbstractController
     }
 
     /**
-     * @Route("/{bar}", name="bar_show", methods={"GET"})
+     * @Route("/{bar}", name="bar_show", methods={"GET", "POST"})
      * @ParamConverter("bar", options={"mapping": {"bar": "slug"}})
      */
-    public function show(Bar $bar): Response
+    public function show(Bar $bar, Request $request, EntityManagerInterface $entityManager): Response
     {
-        return $this->render('bar/show.html.twig', [
+        /** @var Comment $comment */
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $comment->setDatetime(new DateTime());
+            $comment->setUser($this->getUser());
+            $comment->setBar($bar);
+            $entityManager->persist($comment);
+            
+            $entityManager->flush();
+            return $this->redirectToRoute('bar_show', ['bar' => $bar->getSlug()], Response::HTTP_SEE_OTHER);
+
+        }
+
+        return $this->renderForm('bar/show.html.twig', [
             'bar' => $bar,
+            'form' => $form,
+            'comment' => $bar->getComments()
         ]);
     }
 

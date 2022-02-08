@@ -13,8 +13,8 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('name')
-            ->add('firstname');
+            ->add('name',null, array('label' => 'Nom'))
+            ->add('firstname',null, array('label' => 'Prenom'));
     }
 
     public function configureOptions(OptionsResolver $resolver): void

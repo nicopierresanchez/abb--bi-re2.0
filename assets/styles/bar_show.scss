@@ -1,5 +1,7 @@
 @import "app.scss";
-
+body {
+    color: white;
+}
 .title {
     color: rgb(255, 255, 255);
     width: 100%;
@@ -99,9 +101,50 @@
         margin: 1rem auto auto auto;
     }
 }
-
+.comment_space {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    .comment {
+        text-align: left;
+        margin-top: 1rem;
+        background-color: rgba(128, 128, 128, 0.329);
+        border-radius: 5px;
+        div{
+            margin: 1rem auto auto 1rem;
+        }
+    }
+}
 .bar_no_phone {
     color: rgb(255, 186, 96);
+}
+.segment_form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.1rem;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+
+    label {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    input {
+        max-width: 1000px;
+        border-radius: 20px;
+    }
+    
 }
 @media screen and (min-width: 900px) {
     .card_bar {
@@ -123,3 +166,6 @@
         }
     }
 }
+textarea{
+        width:1000px; 
+    }
