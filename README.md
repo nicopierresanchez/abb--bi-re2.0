@@ -10,6 +10,11 @@ J'entreprends par la suite d'y incrémenter un système de panier ou le consomma
 
 Initialiser le projet :
 
-Une fois que vous avez cloné le projet, faite un composer install ainsi qu'un yarn install.
+Une fois que vous avez cloné le projet, faite un composer install ainsi qu'un yarn install, puis:
+
+symfony console d:d:d
+symfony console d:d:c
+symfony console d:m:m
+symfony console d:f:l
 
 
