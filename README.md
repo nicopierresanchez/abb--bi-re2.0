@@ -12,7 +12,6 @@ Initialiser le projet :
 
 Une fois que vous avez cloné le projet, faite un composer install ainsi qu'un yarn install, puis:
 
-symfony console d:d:d
 
 symfony console d:d:c
 
